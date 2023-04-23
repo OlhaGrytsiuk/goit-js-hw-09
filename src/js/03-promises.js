@@ -1,12 +1,11 @@
 import { Notify } from 'notiflix';
 
-//formInput = document.querySelector('.form');
+formInput = document.querySelector('.form');
 delay = document.querySelector('input[name="delay"]');
 step = document.querySelector('input[name="step"]');
 amount = document.querySelector('input[name="amount"]');
-button = document.querySelector('button');
 
-button.addEventListener('click', onFormSubmit);
+formInput.addEventListener('submit', onFormSubmit);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
@@ -22,8 +21,8 @@ function createPromise(position, delay) {
 }
 function onFormSubmit(event) {
   event.preventDefault();
-  for (let i = 0; i < +amount.value; i += 1) {
-    createPromise(i + 1, +step.value * i + +delay.value)
+  for (let i = 0; i < amount.value; i += 1) {
+    createPromise(i + 1, step.value * i + delay.value)
       .then(({ position, delay }) =>
         Notify.success(`Fulfilled promise ${position} in ${delay}ms`)
       )
