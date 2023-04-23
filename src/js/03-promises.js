@@ -1,11 +1,12 @@
 import { Notify } from 'notiflix';
 
-formInput = document.querySelector('.form');
+//formInput = document.querySelector('.form');
 delay = document.querySelector('input[name="delay"]');
 step = document.querySelector('input[name="step"]');
 amount = document.querySelector('input[name="amount"]');
+button = document.querySelector('button');
 
-formInput.addEventListener('submit', onFormSubmit);
+button.addEventListener('click', onFormSubmit);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
