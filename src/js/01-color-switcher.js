@@ -2,6 +2,7 @@ const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
 let timerId = null;
 let isActive = false;
+stopBtn.setAttribute('disabled', true);
 
 startBtn.addEventListener('click', onChangeColor);
 stopBtn.addEventListener('click', () => {
