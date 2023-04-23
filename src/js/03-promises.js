@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix';
 
-form = document.querySelector('.form');
+form = document.querySelector('form');
 delay = document.querySelector('input[name="delay"]');
 step = document.querySelector('input[name="step"]');
 amount = document.querySelector('input[name="amount"]');
